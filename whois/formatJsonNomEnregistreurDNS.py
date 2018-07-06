@@ -52,7 +52,8 @@ a = dict(data.domain_whois)
 
 source = "Whois - Trouver le nom de l'enregistreur du domaine"
 if "registrar" in a:
-	listJsonData.append(CreateJsonNode(a["registrar"], source, "Nom ou organisation qui a reserve le nom de domaine", "Nom", [], True))
+	if len(a["registrar"]) > 0:
+		listJsonData.append(CreateJsonNode(a["registrar"], source, "Nom ou organisation qui a reserve le nom de domaine", "Nom", [], True))
 
 # The json result
 jsonResult = ""

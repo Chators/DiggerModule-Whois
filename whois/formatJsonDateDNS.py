@@ -52,11 +52,14 @@ a = dict(data.domain_whois)
 
 source = "Whois - Trouver date, actualisation et expiration d'un domaine"
 if "creation_date" in a:
-	listJsonData.append(CreateJsonNode(a["creation_date"], source, "Date de creation du domaine", "Date", [], True))
+	if len(a["creation_date"]) > 0:
+		listJsonData.append(CreateJsonNode(a["creation_date"], source, "Date de creation du domaine", "Date", [], True))
 if "expiration_date" in a:
-	listJsonData.append(CreateJsonNode(a["expiration_date"], source, "Date d'expiration du domaine", "Date", [], True))
+	if len(a["expiration_date"]) > 0:
+		listJsonData.append(CreateJsonNode(a["expiration_date"], source, "Date d'expiration du domaine", "Date", [], True))
 if "updated_date" in a:
-	listJsonData.append(CreateJsonNode(a["updated_date"], source, "Date de la derniere actualisation du domaine", "Date", [], True))
+	if len(a["updated_date"]) > 0:
+		listJsonData.append(CreateJsonNode(a["updated_date"], source, "Date de la derniere actualisation du domaine", "Date", [], True))
 
 # The json result
 jsonResult = ""
