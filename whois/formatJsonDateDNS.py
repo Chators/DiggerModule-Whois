@@ -68,7 +68,6 @@ for element in listJsonData:
 jsonResult = jsonResult[0:len(jsonResult)-1]
 
 #save in file
-print (jsonResult)
 fichier = open(jsonFileName, "w")
 fichier.write(jsonResult)
 fichier.close()
